@@ -1,13 +1,15 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import Image from "../assets/Image.png";
-
+import { Menu, X } from "lucide-react"; // You can also use any icon lib
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <>
     <nav className="w-full">
       {/* Top Bar */}
-      <div className="bg-[#FBFBFB] w-full flex justify-between items-center px-10 py-2 text-sm text-gray-700">
+      <div className="bg-[#FBFBFB] w-full flex justify-between items-center px-4 md:px-10 py-2 text-sm text-gray-700">
         <p>Mon - Sat : 9am to 7pm</p>
         <div className="flex gap-2 items-center">
           <button className="hover:text-orange-600 font-medium">Login</button>
@@ -17,56 +19,58 @@ const Navbar = () => {
       </div>
 
       {/* Main Navbar */}
-      <div className="w-full h-16 bg-white shadow-sm flex items-center justify-between px-10">
+      <div className="bg-white shadow-sm w-full px-4 md:px-10 py-4 flex items-center justify-between">
         {/* Logo */}
         <img src={Image} alt="Logo" className="h-10" />
 
-        {/* Navigation Links */}
-        <ul className="flex gap-6 text-gray-800 font-semibold">
-          <li>
-            <Link to="/" className="hover:underline hover:text-orange-600">
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link to="/about" className="hover:underline hover:text-orange-600">
-              About
-            </Link>
-          </li>
-          <li>
-            <Link to="/gallery" className="hover:underline hover:text-orange-600">
-              Gallery
-            </Link>
-          </li>
-          <li>
-            <Link to="/classes" className="hover:underline hover:text-orange-600">
-              Classes
-            </Link>
-          </li>
-          <li>
-            <Link to="/pages" className="hover:underline hover:text-orange-600">
-              Pages
-            </Link>
-          </li>
-          <li>
-            <Link to="/blog" className="hover:underline hover:text-orange-600">
-              Blog
-            </Link>
-          </li>
+        {/* Desktop Links */}
+        <ul className="hidden md:flex gap-6 text-gray-800 font-semibold">
+          {["Home", "About", "Gallery", "Classes", "Pages", "Blog"].map((text) => (
+            <li key={text}>
+              <Link to={`/${text.toLowerCase()}`} className="hover:underline hover:text-orange-600">
+                {text}
+              </Link>
+            </li>
+          ))}
         </ul>
 
-        {/* Appointment CTA */}
-        <div>
+        {/* Appointment CTA (desktop) */}
+        <Link
+          to="/appointment"
+          className="hidden md:inline-block text-orange-600 font-bold border border-orange-600 px-4 py-1 rounded hover:bg-orange-600 hover:text-white transition"
+        >
+          Appointment
+        </Link>
+
+        {/* Mobile Menu Button */}
+        <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
+          {isOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+      </div>
+
+      {/* Mobile Dropdown Nav */}
+      {isOpen && (
+        <div className="md:hidden bg-white px-4 pb-4 flex flex-col gap-4 text-gray-800 font-semibold">
+          {["Home", "About", "Gallery", "Classes", "Pages", "Blog"].map((text) => (
+            <Link
+              key={text}
+              to={`/${text.toLowerCase()}`}
+              className="hover:underline hover:text-orange-600"
+              onClick={() => setIsOpen(false)}
+            >
+              {text}
+            </Link>
+          ))}
           <Link
             to="/appointment"
-            className=""
+            className="font-bold border border-orange-600 px-4 py-1 rounded hover:bg-orange-600 hover:text-white transition"
+            onClick={() => setIsOpen(false)}
           >
-            | Appointment |
+            Appointment
           </Link>
         </div>
-      </div>
+      )}
     </nav>
-    </>
   );
 };
 

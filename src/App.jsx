@@ -9,9 +9,11 @@ import Pages from "./components/pages/Pages";
 import Blog from "./components/pages/Blog";
 import Navbar from "./components/Navbar"; // where your <ul> is
 
+
 function App() {
   return (
-    <Router>
+    <div className="overflow-x-hidden">
+      <Router>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -22,6 +24,7 @@ function App() {
         <Route path="/blog" element={<Blog />} />
       </Routes>
     </Router>
+    </div>
   );
 }
 

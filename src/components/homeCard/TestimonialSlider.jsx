@@ -45,22 +45,22 @@ const TestimonialSlider = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-black text-white flex flex-col p-26 relative">
+    <div className="min-h-screen bg-black text-white flex flex-col items-center justify-center px-4 md:px-20 py-10 overflow-x-hidden">
       
       {/* Heading */}
-      <div className="mb-8">
-        <div className="flex items-center gap-2 mb-2">
+      <div className="mb-8 text-center">
+        <div className="flex items-center justify-center gap-2 mb-2">
           <div className="h-1 w-12 rounded bg-orange-500"></div>
           <p className="text-orange-500 font-semibold">FITNESS EXPERT</p>
         </div>
-        <h2 className="text-4xl font-semibold leading-tight">
+        <h2 className="text-3xl md:text-4xl font-semibold leading-tight">
           WHAT OUR <br />
-          CLIENTS SAYS?
+          CLIENTS SAY?
         </h2>
       </div>
 
       {/* Testimonial Card */}
-      <div className="bg-white h-[38vh] text-black w-[70vh] p-6 relative z-10 shadow-lg">
+      <div className="bg-white text-black w-full max-w-xl p-6 rounded shadow-lg relative">
         <div className="flex items-center gap-4 mb-4">
           <img
             src={testimonials[index].image}
