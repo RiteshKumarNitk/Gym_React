@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Image from "../assets/Image.png";
-import { Menu, X } from "lucide-react"; // You can also use any icon lib
+import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,18 +12,15 @@ const Navbar = () => {
       <div className="bg-[#FBFBFB] w-full flex justify-between items-center px-4 md:px-10 py-2 text-sm text-gray-700">
         <p>Mon - Sat : 9am to 7pm</p>
         <div className="flex gap-2 items-center">
-          <button className="hover:text-orange-600 font-medium">Login</button>
+          <Link to="/loginpage" className="hover:text-orange-600 font-medium">Login</Link>
           <span>/</span>
-          <button className="hover:text-orange-600 font-medium">Register</button>
+          <Link to="/register" className="hover:text-orange-600 font-medium">Register</Link>
         </div>
       </div>
 
       {/* Main Navbar */}
       <div className="bg-white shadow-sm w-full px-4 md:px-10 py-4 flex items-center justify-between">
-        {/* Logo */}
         <img src={Image} alt="Logo" className="h-10" />
-
-        {/* Desktop Links */}
         <ul className="hidden md:flex gap-6 text-gray-800 font-semibold">
           {["Home", "About", "Gallery", "Classes", "Pages", "Blog"].map((text) => (
             <li key={text}>
@@ -33,22 +30,18 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
-
-        {/* Appointment CTA (desktop) */}
         <Link
           to="/appointment"
           className="hidden md:inline-block text-orange-600 font-bold border border-orange-600 px-4 py-1 rounded hover:bg-orange-600 hover:text-white transition"
         >
           Appointment
         </Link>
-
-        {/* Mobile Menu Button */}
         <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
-      {/* Mobile Dropdown Nav */}
+      {/* Mobile Nav */}
       {isOpen && (
         <div className="md:hidden bg-white px-4 pb-4 flex flex-col gap-4 text-gray-800 font-semibold">
           {["Home", "About", "Gallery", "Classes", "Pages", "Blog"].map((text) => (
