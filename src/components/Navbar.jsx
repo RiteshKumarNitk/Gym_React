@@ -25,8 +25,8 @@ const Navbar = () => {
           {["Home", "About", "Gallery", "Classes", "Pages", "Blog"].map((text) => (
             <li key={text}>
               <Link to={`/${text.toLowerCase()}`} className="hover:underline hover:text-orange-600">
-                {text}
               </Link>
+                {text}ssss
             </li>
           ))}
         </ul>
