@@ -10,6 +10,8 @@ import Navbar from "./components/Navbar";
 import LoginPage from "./components/pages/LoginPage";
 import RegisterPage from "./components/pages/RegisterPage";
 import Home from "./components/pages/Home";
+import Dashboard from "./components/pages/Dashboard";
+import Members from "./components/pages/dashboard/Members";
 
 
 
@@ -29,6 +31,8 @@ function App() {
         <Route path="/classes" element={<Classes />} />
         <Route path="/pages" element={<Pages />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/members" element={<Members />} />
       </Routes>
     </Router>
     </div>

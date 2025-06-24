@@ -9,6 +9,8 @@ import FitnessLanding from '../homeCard/FitnessLanding';
 import Timetable from '../homeCard/Timetable';
 import TestimonialSlider from '../homeCard/TestimonialSlider';
 import Footer from './Footer';
+import Dashboard from './Dashboard';
+
 
 
 const Home = () => {
@@ -101,6 +103,7 @@ const Home = () => {
       <Timetable/>
       <TestimonialSlider/>
       <Footer/>
+      <Dashboard/>
     </div>
   );
 };
