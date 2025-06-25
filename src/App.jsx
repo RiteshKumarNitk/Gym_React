@@ -1,35 +1,25 @@
-// src/App.jsx
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import About from "./components/pages/About";
-import Gallery from "./components/pages/Gallery";
-import Classes from "./components/pages/Classes";
-import Pages from "./components/pages/Pages";
-import Blog from "./components/pages/Blog";
-import Navbar from "./components/Navbar";
-import LoginPage from "./components/pages/LoginPage";
-import RegisterPage from "./components/pages/RegisterPage";
-import Home from "./components/pages/Home";
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-function App() {
+import SignIn from './auth/sign_in';
+import Register from './auth/register';
+import Dashboard from './dashboard/dashboard';
+import UserPage from './users/userPage';
+import Profile from './users/profile';
+
+const App = () => {
   return (
-    <div className="overflow-x-hidden">
-      <Router>
-          <Route path="/LoginPage" element={<LoginPage />} />
-        <Routes>
-        <Navbar />
-          <Route path="/" element={<Home />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/register" element={<RegisterPage />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/gallery" element={<Gallery />} />
-          <Route path="/classes" element={<Classes />} />
-          <Route path="/pages" element={<Pages />} />
-          <Route path="/blog" element={<Blog />} />
-        </Routes>
-      </Router>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<SignIn />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/users" element={<UserPage />} />
+        <Route path="/profile" element={<Profile />} />
+        {/* Add more <Route> as needed */}
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;

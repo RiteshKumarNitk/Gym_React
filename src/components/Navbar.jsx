@@ -26,7 +26,7 @@ const Navbar = () => {
             <li key={text}>
               <Link to={`/${text.toLowerCase()}`} className="hover:underline hover:text-orange-600">
               </Link>
-                {text}ssss
+                {text}
             </li>
           ))}
         </ul>
