@@ -1,6 +1,7 @@
 import React from "react";
 import { Facebook, Twitter, Linkedin, Mail, PhoneCall, MapPin, Send } from "lucide-react";
-import Image from '../../assets/image.png';
+// import Image from '../../assets/image.png';
+import Image from '../assets/image.png';
 
 const Footer = () => {
   return (

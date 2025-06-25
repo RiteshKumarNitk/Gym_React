@@ -1,14 +1,14 @@
 import React from 'react';
-import Slider from '../Slider';
+import Slider from '../../components/Slider';
 import Img1 from '../../assets/Img1.png';
 import { Dumbbell, Bike, StretchHorizontal } from 'lucide-react'; // Replaced Yoga with valid icon
-import Facts from '../homeCard/Facts';
-import Trainers from '../homeCard/Trainers';
-import WorkoutSection from '../homeCard/WorkoutSection';
-import FitnessLanding from '../homeCard/FitnessLanding';
-import Timetable from '../homeCard/Timetable';
-import TestimonialSlider from '../homeCard/TestimonialSlider';
-import Footer from './Footer';
+import Facts from './Facts';
+import Trainers from './Trainers';
+import WorkoutSection from './WorkoutSection';
+import FitnessLanding from './FitnessLanding';
+import Timetable from './Timetable';
+import TestimonialSlider from './TestimonialSlider';
+import Footer from '../../components/Footer';
 
 
 const Home = () => {
