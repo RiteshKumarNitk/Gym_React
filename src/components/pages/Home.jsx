@@ -103,7 +103,6 @@ const Home = () => {
       <Timetable/>
       <TestimonialSlider/>
       <Footer/>
-      <Dashboard/>
     </div>
   );
 };
